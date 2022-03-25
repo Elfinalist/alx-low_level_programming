@@ -1,32 +1,28 @@
 #include "main.h"
 
 /**
- * _strncat - a function that concatenates two strings.
+ * _strcat - a function that concatenates two strings.
  * @dest: An input string
  * @src: An input string
- * @n: An input integer
  * Return: integer from conversion
  */
 
-char *_strncat(char *dest, char *src, int n)
+char *_strcat(char *dest, char *src)
 {
-	int i = 0, j;
+	char *start = dest;
 
-	/* move to the end of the dest string */
-	while (dest[i] != '\0')
+	while (*dest != '\0')
 	{
-		/* `i` now point to terminating null character in the dest */
-		i++;
+		dest++;
 	}
 
-	/* appends `n` characters of the source to the dest string */
-	for (j = 0; src[j] != '\0' && j < n; j++)
+	while (*src != '\0')
 	{
-		dest[i + j] = src[j];
+		*dest = *src;
+		dest++;
+		src++;
 	}
-	/* null terminate dest string */
-	dest[i + j] = '\0';
 
-	/* the dest is returned by standard `strncat()` */
-	return (dest);
+	*dest = '\0'; /* add '\0' at the end (terminating Null character) */
+	return (start);
 }
