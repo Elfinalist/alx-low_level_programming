@@ -3,7 +3,6 @@
 
 /*
  * File: main.h
- * AUth: Abraham Opiko
  * Desc: Header file containing prototypes for all functions
  * in the 0x14-bit_manipulation directory.
  */
